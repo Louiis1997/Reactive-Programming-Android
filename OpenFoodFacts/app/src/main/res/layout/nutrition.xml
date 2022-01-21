@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/product_nutrient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="@string/product_nutrient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/circle_fat"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/ic_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_nutrient" />
+
+    <TextView
+        android:id="@+id/product_fat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/product_fat"
+        app:layout_constraintLeft_toRightOf="@id/circle_fat"
+        app:layout_constraintTop_toBottomOf="@id/product_nutrient" />
+
+    <View
+        android:id="@+id/circle_saturatedFat"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/ic_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_fat" />
+
+    <TextView
+        android:id="@+id/product_saturatedFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/product_saturatedFat"
+        app:layout_constraintTop_toBottomOf="@id/product_fat"
+        app:layout_constraintLeft_toRightOf="@id/circle_saturatedFat"/>
+
+    <View
+        android:id="@+id/circle_sugars"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/ic_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_saturatedFat" />
+
+    <TextView
+        android:id="@+id/product_sugars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/product_sugars"
+        app:layout_constraintTop_toBottomOf="@id/product_saturatedFat"
+        app:layout_constraintLeft_toRightOf="@id/circle_sugars"/>
+
+    <View
+        android:id="@+id/circle_salt"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/ic_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_sugars" />
+
+    <TextView
+        android:id="@+id/product_salt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/product_salt"
+        app:layout_constraintTop_toBottomOf="@id/product_sugars"
+        app:layout_constraintLeft_toRightOf="@+id/circle_salt"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

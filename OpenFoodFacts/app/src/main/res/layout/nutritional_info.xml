@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="310dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:border="right|bottom" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_nutrient"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:text="@string/hundred_grams"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:border="right|bottom">
+    </com.example.openfoodfacts.TableCellView>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_portion"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="@string/portion"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_energy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/energy"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/energy"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:border="right|bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_energy" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_energy"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_nutrient"
+        app:layout_constraintTop_toTopOf="@id/guideline_energy"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_energy_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_energy"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_fat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/fat"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/fat"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:border="right|bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_fat" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_fat"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_energy"
+        app:layout_constraintTop_toTopOf="@id/guideline_fat"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_fat_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_energy_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_fat"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_saturatedFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="140dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/saturatedFat"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/saturated_fat"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_saturatedFat"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_saturatedFat"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_fat"
+        app:layout_constraintTop_toTopOf="@id/guideline_saturatedFat"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_saturatedFat_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_fat_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_saturatedFat"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_carbohydrates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="180dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/carbohydrates"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/carbohydrates"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_carbohydrates"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_carbohydrates"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_saturatedFat"
+        app:layout_constraintTop_toTopOf="@id/guideline_carbohydrates"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_carbohydrates_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_saturatedFat_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_carbohydrates"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_sugars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="220dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/sugars"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/sugars"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_sugars"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_sugars"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_carbohydrates"
+        app:layout_constraintTop_toTopOf="@id/guideline_sugars"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_sugars_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_carbohydrates_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_sugars"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_fiber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="260dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/dietaryFiber"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/fiber"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_fiber"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_fiber"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_sugars"
+        app:layout_constraintTop_toTopOf="@id/guideline_fiber"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_fiber_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_sugars_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_fiber"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_proteins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="300dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/proteins"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/proteins"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:border="right|bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_proteins" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_proteins"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_fiber"
+        app:layout_constraintTop_toTopOf="@id/guideline_proteins"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_proteins_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_fiber_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_proteins"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_salt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="340dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/salt"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/salt"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_salt"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_salt"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_proteins"
+        app:layout_constraintTop_toTopOf="@id/guideline_salt"
+        app:border="right|bottom"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_salt_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_proteins_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_salt"
+        app:border="bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_sodium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="380dp" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/sodium"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="@string/sodium"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        app:border="right"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_sodium" />
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_sodium"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_salt"
+        app:layout_constraintTop_toTopOf="@id/guideline_sodium"
+        app:border="right"/>
+
+    <com.example.openfoodfacts.TableCellView
+        android:id="@+id/product_sodium_portion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/product_salt_portion"
+        app:layout_constraintTop_toTopOf="@id/guideline_sodium" />
+</androidx.constraintlayout.widget.ConstraintLayout>

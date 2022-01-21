@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_button.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_calories.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_circle.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_empty_saved.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_nav_bar_bookmarks.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_nav_bar_cart.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_nav_bar_profile.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_nav_bar_stats.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_ranking.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/drawable/ic_toolbar.xml" value="0.3828125" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/bottom_navigation_view.xml" value="0.2921195652173913" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/detail_bar.xml" value="0.2921195652173913" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/empty_screen.xml" value="0.22" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/error.xml" value="0.2921195652173913" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/fiche.xml" value="0.33" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/nutrition.xml" value="0.33" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/nutritional_info.xml" value="0.33" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/product_card.xml" value="0.4103585657370518" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/product_list.xml" value="0.322463768115942" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/layout/sheet.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/menu/product_details_tabs.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
+        <entry key="..\:/Users/Louii/AndroidStudioProjects/OpenFoodFacts/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
+        <entry key="app/src/main/res/layout/detail.xml" value="0.12259371833839919" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

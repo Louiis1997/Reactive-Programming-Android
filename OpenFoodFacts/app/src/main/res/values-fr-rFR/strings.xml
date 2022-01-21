@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mon comparateur</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="product_barcode">Code bar : %1$s</string>
+    <string name="product_quantity">Quantité : %1$s</string>
+    <string name="product_distribution">Vendu en : %1$s</string>
+    <string name="product_ingredient">Ingrédient : %1$s</string>
+    <string name="product_allergens">Substances Allergènes : %1$s</string>
+    <string name="product_additives">Additifs : %1$s</string>
+    <string name="product_nutrient">Repères nutritionnels pour 100g</string>
+    <string name="product_fat">%1$s de Matières grasses / Lipides \nen faible quantité</string>
+    <string name="product_saturatedFat">%1$s d\'acide gras saturés \nen faible quantité</string>
+    <string name="product_sugars">%1$s de sucres \nen quantité moderée</string>
+    <string name="product_salt">%1$s de Sel \nen quantité moderée</string>
+    <string name="hundred_grams">Pour 100g</string>
+    <string name="portion">Par part</string>
+    <string name="energy">\u00A0Énergie</string>
+    <string name="fat">\u00A0Matières grasses</string>
+    <string name="saturated_fat">\u00A0dont Acides gras saturés</string>
+    <string name="carbohydrates">\u00A0Glucides</string>
+    <string name="sugars">\u00A0dont Sucres</string>
+    <string name="fiber">\u00A0Fibres alimentaires</string>
+    <string name="proteins">\u00A0Protéines</string>
+    <string name="salt">\u00A0Sel</string>
+    <string name="sodium">\u00A0Sodium</string>
+    <string name="texte">Vous n\'avez encore rien scanné !</string>
+    <string name="sous_texte">Cliquez sur le bouton ci-dessous pour commencer.</string>
+    <string name="button">SCANNER UN PRODUIT</string>
+    <string name="fiche">Fiche</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="tableau">Tableau</string>
+</resources>

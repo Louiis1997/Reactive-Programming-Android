@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">OpenFoodFacts</string>
+    <string name="welcome">Welcome</string>
+    <string name="product_barcode">Barcode : %1$s</string>
+    <string name="product_quantity">Quantity : %1$s</string>
+    <string name="product_distribution">Sell in : %1$s</string>
+    <string name="product_ingredient">Ingredient : %1$s</string>
+    <string name="product_allergens">Allergenic Substances: %1$s</string>
+    <string name="product_additives">Additives : %1$s</string>
+    <string name="product_nutrient">Nutritional benchmarks per 100g</string>
+    <string name="product_fat">%1$s of Fats / Lipids \nin small quantities</string>
+    <string name="product_saturatedFat">%1$s of saturated fatty acids \nin small quantities</string>
+    <string name="product_sugars">%1$s of sugars \nin moderation</string>
+    <string name="product_salt">%1$s of salt \nin moderation</string>
+    <string name="hundred_grams">For 100g</string>
+    <string name="portion">Per serving</string>
+    <string name="energy">\u00A0Energy</string>
+    <string name="fat">\u00A0Fatty substances</string>
+    <string name="saturated_fat">\u00A0including Saturated fatty acids</string>
+    <string name="carbohydrates">\u00A0Carbohydrates</string>
+    <string name="sugars">\u00A0including Sugars</string>
+    <string name="fiber">\u00A0Dietary fiber</string>
+    <string name="proteins">\u00A0Proteins</string>
+    <string name="salt">\u00A0Salt</string>
+    <string name="sodium">\u00A0Sodium</string>
+    <string name="texte">You haven\'t scanned anything yet !</string>
+    <string name="sous_texte">Click the button below to get started.</string>
+    <string name="button">SCAN A PRODUCT</string>
+    <string name="fiche">Fiche</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="tableau">Array</string>
+</resources>
