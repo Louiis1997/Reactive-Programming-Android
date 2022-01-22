@@ -58,7 +58,7 @@ class ProductsListFragment : Fragment() {
         val capellini = Product(
             "Capellini n.1",
             "Barilla",
-            "3083680085305",
+            "8076800195019",
             "a",
             "https://static.openfoodfacts.org/images/products/807/680/019/5019/front_de.572.400.jpg",
             "500 g",
@@ -82,7 +82,7 @@ class ProductsListFragment : Fragment() {
         val chocapic = Product(
             "Céréales chocapic",
             "Nestlé",
-            "3083680085306",
+            "7613034626844",
             "b",
             "https://static.openfoodfacts.org/images/products/761/303/462/6844/front_fr.199.400.jpg",
             "430 g",
