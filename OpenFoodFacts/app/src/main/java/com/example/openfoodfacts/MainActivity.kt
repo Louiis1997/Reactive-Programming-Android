@@ -20,10 +20,5 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(
             this, R.string.welcome, Toast.LENGTH_LONG
         ).show()
-
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.nav_host_fragment_container, ProductDetailsFragment())
-            .commitAllowingStateLoss()
     }
 }

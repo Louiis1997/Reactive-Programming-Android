@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -27,5 +28,9 @@ class ProductDetailsFragment : Fragment() {
 
         val navHost = childFragmentManager.findFragmentById(R.id.product_details_nav_host) as NavHostFragment
         NavigationUI.setupWithNavController(product_details_bottom_nav, navHost.navController)
+
+        ProductDetailsFragmentArgs.fromBundle(requireArguments()).product
+
+        (activity as AppCompatActivity).supportActionBar?.title = "Détails"
     }
 }

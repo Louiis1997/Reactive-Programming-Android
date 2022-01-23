@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.nutritional_info.view.*
 
 class ProductDetailsNutritionalValuesFragment : Fragment() {
     override fun onCreateView(
@@ -19,24 +19,27 @@ class ProductDetailsNutritionalValuesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.product_energy)?.text = arguments?.getString("nutritionFacts.energy.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.energy.unit"))
-        view.findViewById<TextView>(R.id.product_energy_portion)?.text = arguments?.getString("nutritionFacts.energy.portion")
-        view.findViewById<TextView>(R.id.product_fat)?.text = arguments?.getString("nutritionFacts.fat.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.fat.unit"))
-        view.findViewById<TextView>(R.id.product_fat_portion)?.text = arguments?.getString("nutritionFacts.fat.portion")
-        view.findViewById<TextView>(R.id.product_saturatedFat)?.text = arguments?.getString("nutritionFacts.saturatedFat.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.saturatedFat.unit"))
-        view.findViewById<TextView>(R.id.product_saturatedFat_portion)?.text = arguments?.getString("nutritionFacts.saturatedFat.portion")
-        view.findViewById<TextView>(R.id.product_carbohydrates)?.text = arguments?.getString("nutritionFacts.carbohydrates.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.carbohydrates.unit"))
-        view.findViewById<TextView>(R.id.product_carbohydrates_portion)?.text = arguments?.getString("nutritionFacts.carbohydrates.portion")
-        view.findViewById<TextView>(R.id.product_sugars)?.text = arguments?.getString("nutritionFacts.sugars.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.sugars.unit"))
-        view.findViewById<TextView>(R.id.product_sugars_portion)?.text = arguments?.getString("nutritionFacts.sugars.portion")
-        view.findViewById<TextView>(R.id.product_fiber)?.text = arguments?.getString("nutritionFacts.fiber.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.fiber.unit"))
-        view.findViewById<TextView>(R.id.product_fiber_portion)?.text = arguments?.getString("nutritionFacts.fiber.portion")
-        view.findViewById<TextView>(R.id.product_proteins)?.text = arguments?.getString("nutritionFacts.proteins.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.proteins.unit"))
-        view.findViewById<TextView>(R.id.product_proteins_portion).text = arguments?.getString("nutritionFacts.proteins.portion")
-        view.findViewById<TextView>(R.id.product_salt)?.text = arguments?.getString("nutritionFacts.salt.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.salt.unit"))
-        view.findViewById<TextView>(R.id.product_salt_portion)?.text = arguments?.getString("nutritionFacts.salt.portion")
-        view.findViewById<TextView>(R.id.product_sodium)?.text = arguments?.getString("nutritionFacts.sodium.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.sodium.unit"))
-        view.findViewById<TextView>(R.id.product_sodium_portion)?.text = arguments?.getString("nutritionFacts.sodium.portion")
+        val product : Product = ProductDetailsFragmentArgs.fromBundle(
+            requireParentFragment().requireParentFragment().requireArguments()
+        ).product
 
+        view.product_energy.text = product.nutritionFacts.energy.hundredGrams.plus(" ").plus(product.nutritionFacts.energy.unit)
+        view.product_energy_portion.text = product.nutritionFacts.energy.portion
+        view.product_fat.text = product.nutritionFacts.fat.hundredGrams.plus(" ").plus(product.nutritionFacts.fat.unit)
+        view.product_fat_portion.text = product.nutritionFacts.fat.portion
+        view.product_saturatedFat.text = product.nutritionFacts.saturatedFat.hundredGrams.plus(" ").plus(product.nutritionFacts.saturatedFat.unit)
+        view.product_saturatedFat_portion.text = product.nutritionFacts.saturatedFat.portion
+        view.product_carbohydrates.text = product.nutritionFacts.carbohydrates.hundredGrams.plus(" ").plus(product.nutritionFacts.carbohydrates.unit)
+        view.product_carbohydrates_portion.text = product.nutritionFacts.carbohydrates.portion
+        view.product_sugars.text = product.nutritionFacts.sugars.hundredGrams.plus(" ").plus(product.nutritionFacts.sugars.unit)
+        view.product_sugars_portion.text = product.nutritionFacts.sugars.portion
+        view.product_fiber.text = product.nutritionFacts.fiber.hundredGrams.plus(" ").plus(product.nutritionFacts.fiber.unit)
+        view.product_fiber_portion.text = product.nutritionFacts.fiber.portion
+        view.product_proteins.text = product.nutritionFacts.proteins.hundredGrams.plus(" ").plus(product.nutritionFacts.proteins.unit)
+        view.product_proteins_portion.text = product.nutritionFacts.proteins.portion
+        view.product_salt.text = product.nutritionFacts.salt.hundredGrams.plus(" ").plus(product.nutritionFacts.salt.unit)
+        view.product_salt_portion.text = product.nutritionFacts.salt.portion
+        view.product_sodium.text = product.nutritionFacts.sodium.hundredGrams.plus(" ").plus(product.nutritionFacts.sodium.unit)
+        view.product_sodium_portion.text = product.nutritionFacts.sodium.portion
     }
 }

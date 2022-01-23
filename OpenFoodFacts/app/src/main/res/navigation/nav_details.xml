@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/tab_nav"
-    app:startDestination="@id/productDetailsSummaryFragment">
+    android:id="@+id/app_nav"
+    app:startDestination="@id/tab_fiche">
 
     <fragment
-        android:id="@+id/productDetailsSummaryFragment"
+        android:id="@+id/tab_fiche"
         android:name="com.example.openfoodfacts.ProductDetailsSummaryFragment"
         android:label="ProductDetailsSummaryFragment" />
     <fragment
-        android:id="@+id/productDetailsNutritionFragment"
+        android:id="@+id/tab_nutrition"
         android:name="com.example.openfoodfacts.ProductDetailsNutritionFragment"
         android:label="ProductDetailsNutritionFragment" />
     <fragment
-        android:id="@+id/productDetailsNutritionalValuesFragment"
+        android:id="@+id/tab_tableau"
         android:name="com.example.openfoodfacts.ProductDetailsNutritionalValuesFragment"
         android:label="ProductDetailsNutritionalValuesFragment" />
 </navigation>

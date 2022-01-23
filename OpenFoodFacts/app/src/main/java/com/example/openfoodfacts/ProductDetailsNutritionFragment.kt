@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.nutrition.view.*
 
 class ProductDetailsNutritionFragment : Fragment() {
     override fun onCreateView(
@@ -20,14 +20,18 @@ class ProductDetailsNutritionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        DrawableCompat.setTintList(view.findViewById<View>(R.id.circle_fat).background, ColorStateList.valueOf(resources.getColor(fat(arguments?.getString("nutritionFacts.fat.hundredGrams")?.replaceFirst(",",".")!!.toDouble()))))
-        DrawableCompat.setTintList(view.findViewById<View>(R.id.circle_saturatedFat).background, ColorStateList.valueOf(resources.getColor(saturatedFat(arguments?.getString("nutritionFacts.saturatedFat.hundredGrams")?.replaceFirst(",",".")!!.toDouble()))))
-        DrawableCompat.setTintList(view.findViewById<View>(R.id.circle_sugars).background, ColorStateList.valueOf(resources.getColor(sugars(arguments?.getString("nutritionFacts.sugars.hundredGrams")?.replaceFirst(",",".")!!.toDouble()))))
-        DrawableCompat.setTintList(view.findViewById<View>(R.id.circle_salt)!!.background, ColorStateList.valueOf(resources.getColor(salt(arguments?.getString("nutritionFacts.salt.hundredGrams")?.replaceFirst(",",".")!!.toDouble()))))
-        view.findViewById<TextView>(R.id.product_fat)?.text = getString(R.string.product_fat,arguments?.getString("nutritionFacts.fat.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.fat.unit")))
-        view.findViewById<TextView>(R.id.product_saturatedFat)?.text = getString(R.string.product_saturatedFat, arguments?.getString("nutritionFacts.saturatedFat.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.saturatedFat.unit")))
-        view.findViewById<TextView>(R.id.product_sugars)?.text = getString(R.string.product_sugars, arguments?.getString("nutritionFacts.sugars.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.sugars.unit")))
-        view.findViewById<TextView>(R.id.product_salt)?.text = getString(R.string.product_salt, arguments?.getString("nutritionFacts.salt.hundredGrams").plus(" ").plus(arguments?.getString("nutritionFacts.salt.unit")))
+        val product : Product = ProductDetailsFragmentArgs.fromBundle(
+            requireParentFragment().requireParentFragment().requireArguments()
+        ).product
+
+        DrawableCompat.setTintList(view.circle_fat.background, ColorStateList.valueOf(resources.getColor(fat(product.nutritionFacts.fat.hundredGrams.replaceFirst(",",".").toDouble()))))
+        DrawableCompat.setTintList(view.circle_saturatedFat.background, ColorStateList.valueOf(resources.getColor(saturatedFat(product.nutritionFacts.saturatedFat.hundredGrams.replaceFirst(",",".").toDouble()))))
+        DrawableCompat.setTintList(view.circle_sugars.background, ColorStateList.valueOf(resources.getColor(sugars(product.nutritionFacts.sugars.hundredGrams.replaceFirst(",",".").toDouble()))))
+        DrawableCompat.setTintList(view.circle_salt.background, ColorStateList.valueOf(resources.getColor(salt(product.nutritionFacts.salt.hundredGrams.replaceFirst(",",".").toDouble()))))
+        view.product_fat.text = getString(R.string.product_fat,product.nutritionFacts.fat.hundredGrams.plus(" ").plus(product.nutritionFacts.fat.unit))
+        view.product_saturatedFat.text = getString(R.string.product_saturatedFat, product.nutritionFacts.saturatedFat.hundredGrams.plus(" ").plus(product.nutritionFacts.saturatedFat.unit))
+        view.product_sugars.text = getString(R.string.product_sugars, product.nutritionFacts.sugars.hundredGrams.plus(" ").plus(product.nutritionFacts.sugars.unit))
+        view.product_salt.text = getString(R.string.product_salt, product.nutritionFacts.salt.hundredGrams.plus(" ").plus(product.nutritionFacts.salt.unit))
     }
 
     private fun fat(value : Double) : Int {

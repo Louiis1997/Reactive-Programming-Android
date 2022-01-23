@@ -26,7 +26,7 @@
     <string name="texte">You haven\'t scanned anything yet !</string>
     <string name="sous_texte">Click the button below to get started.</string>
     <string name="button">SCAN A PRODUCT</string>
-    <string name="fiche">Fiche</string>
+    <string name="fiche">Sheet</string>
     <string name="nutrition">Nutrition</string>
     <string name="tableau">Array</string>
 </resources>

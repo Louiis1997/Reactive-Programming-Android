@@ -26,6 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/product_details_nav_host"
-        app:menu="@menu/product_details_tabs" />
+        app:menu="@menu/product_details_tabs"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

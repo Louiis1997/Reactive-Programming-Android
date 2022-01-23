@@ -7,13 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.empty_screen.view.*
 import kotlinx.android.synthetic.main.product_card.view.*
-import kotlinx.android.synthetic.main.product_list.*
+import kotlinx.android.synthetic.main.product_list.view.*
 
 class ProductsListFragment : Fragment() {
     override fun onCreateView(
@@ -31,9 +34,11 @@ class ProductsListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as AppCompatActivity).supportActionBar?.title = "Mes Produits"
+
         val petitPois = Product(
             "Petits pois sélection 'tendres et fondants'",
-            "Cassegraine",
+            "Cassegrain",
             "3083680085304",
             "a",
             "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
@@ -58,11 +63,11 @@ class ProductsListFragment : Fragment() {
         val capellini = Product(
             "Capellini n.1",
             "Barilla",
-            "8076800195019",
+            "3083680085305",
             "a",
             "https://static.openfoodfacts.org/images/products/807/680/019/5019/front_de.572.400.jpg",
             "500 g",
-            listOf("Belgique", "France", "Allemagne", "Italie", "\nJapon", "Luxembourg", "Suède", "Suisse", "États-Unis"),
+            listOf("Belgique", "France", "Allemagne", "Italie", "Japon", "Luxembourg", "Suède", "Suisse", "États-Unis"),
             listOf("Semoule de blé dur", "eau"),
             listOf("Gluten"),
             listOf(),
@@ -82,12 +87,12 @@ class ProductsListFragment : Fragment() {
         val chocapic = Product(
             "Céréales chocapic",
             "Nestlé",
-            "7613034626844",
+            "3083680085306",
             "b",
             "https://static.openfoodfacts.org/images/products/761/303/462/6844/front_fr.199.400.jpg",
             "430 g",
-            listOf("Belgique", "France", "Polynésie française", "Guadeloupe", "Martinique\n", "Maroc", "Nouvelle-Calédonie", "La Réunion", "Espagne", "Suisse"),
-            listOf("BLE complet 33,5%", "chocolat en poudre 22,8% (sucre, cacao en poudre)\n", "farine de BLE 16,8%", "semoule de maïs", "sirop de glucose\n", "sucre", "extrait de malt d'ORGE (ORGE, ORGE malté)", "huile de tournesol", "carbonate de calcium\n", "émulsifiant : lécithine de tournesol ","sel", "arômes naturels", "fer", "vitamines B3", "B5", "D", "B6", "B1", "B2 et B9"),
+            listOf("Belgique", "France", "Guadeloupe", "Maroc", "La Réunion"),
+            listOf("BLE complet 33,5%", "chocolat en poudre 22,8% (sucre, cacao en poudre)", "farine de BLE 16,8%"),
             listOf("Gluten"),
             listOf("E322i - Lécithine"),
             NutritionFacts(
@@ -103,36 +108,44 @@ class ProductsListFragment : Fragment() {
             )
         )
 
-        val products = listOf(petitPois,capellini, chocapic)
+        val products : List<Product> = listOf(petitPois)
+        val intent = Intent("com.google.zxing.client.android.SCAN")
+        intent.putExtra("SCAN_FORMATS","EAN_13")
 
         val adapter = MyAdapter(products,
             object : OnListItemClickListener {
                 override fun onItemClicked(position: Int) {
-                    val intent = Intent(context, ProductDetailsFragment::class.java)
-                    intent.putExtra("product",products[position])
-                    startActivity(intent)
+                    if(products.isNotEmpty()) {
+                        findNavController().navigate(
+                            ProductsListFragmentDirections.actionProductsListFragmentToProductDetailsFragment(
+                                products[position]
+                            )
+                        )
+                    }
+                    else{
+                        startActivityForResult(intent,100)
+                    }
                 }
             }
         )
 
-        recyclerView.apply {
-            recyclerView.layoutManager = LinearLayoutManager(activity)
-            recyclerView.adapter = adapter
+        view.recyclerView.layoutManager = LinearLayoutManager(context)
+        view.recyclerView.adapter = adapter
+
+        view.products_start_scan.setOnClickListener{
+            startActivityForResult(intent, 100)
         }
     }
 
-    class ItemViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-        val productImage : ImageView = view.product_image
-        val productName : TextView = view.product_name
-        val productBrand : TextView = view.product_brand
-        val productNutriscore : TextView = view.product_nutriscore
-        val productCalories : TextView = view.product_calories
-    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-    class EmptyViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-        val texte : TextView = view.texte
-        val sousTexte : TextView = view.sous_texte
-        val button : TextView = view.button
+        if(data != null && requestCode == 100) {
+            val barcodeType = data.getStringExtra("SCAN_RESULT_FORMAT")
+            val decodedBarcode = data.getStringExtra("SCAN_RESULT")
+
+            Toast.makeText(requireContext(), "$barcodeType : $decodedBarcode", Toast.LENGTH_LONG).show()
+        }
     }
 
     class MyAdapter(private val products : List<Product>, val listener : OnListItemClickListener) :
@@ -158,7 +171,7 @@ class ProductsListFragment : Fragment() {
                     Picasso.get().load(products[position].url).into((holder as ItemViewHolder).productImage)
                     holder.productName.text = products[position].name
                     holder.productBrand.text = products [position].brand
-                    holder.productNutriscore.text = "Nutriscore :".plus(products[position].nutriscore.uppercase())
+                    holder.productNutriscore.text = "Nutriscore : ".plus(products[position].nutriscore.uppercase())
                     val calorie = if (products[position].nutritionFacts.energy.portion != "?") (products[position].nutritionFacts.energy.portion.toDouble() * 0.2388).toInt() else products[position].nutritionFacts.energy.portion
                     holder.productCalories.text = calorie.toString().plus(" kCal/part")
                     holder.itemView.setOnClickListener {listener.onItemClicked(holder.adapterPosition)}
@@ -187,6 +200,21 @@ class ProductsListFragment : Fragment() {
             }
         }
     }
+
+    class ItemViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+        val productImage : ImageView = view.product_image
+        val productName : TextView = view.product_name
+        val productBrand : TextView = view.product_brand
+        val productNutriscore : TextView = view.product_nutriscore
+        val productCalories : TextView = view.product_calories
+    }
+
+    class EmptyViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+        val texte : TextView = view.texte
+        val sousTexte : TextView = view.sous_texte
+        val button : TextView = view.button
+    }
+
 
     interface OnListItemClickListener {
         fun onItemClicked(position: Int)
